@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Zeqian Duan&#039;s blog</title>
+      <link>https://duanzeqian.github.io</link>
+      <description>Last 10 notes on Zeqian Duan&#039;s blog</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Tag Index</title>
+    <link>https://duanzeqian.github.io/tags/</link>
+    <guid>https://duanzeqian.github.io/tags/</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Mon, 14 Sep 2026 15:22:00 GMT</pubDate>
+  </item><item>
+    <title>PHIL1009-哲学原理</title>
+    <link>https://duanzeqian.github.io/lessons/phil1009-%E5%93%B2%E5%AD%A6%E5%8E%9F%E7%90%86</link>
+    <guid>https://duanzeqian.github.io/lessons/phil1009-%E5%93%B2%E5%AD%A6%E5%8E%9F%E7%90%86</guid>
+    <description><![CDATA[ 哲学原理 授课教师：蔡文菁 本页面超链接指向的读本均由蔡老师提供 导论 智慧： 古希腊神谕：模糊的，需要仔细解读的。 例如，吕底亚国王克罗埃索斯拥有一个富饶而强大的王国，他对邻居波斯帝国的崛起深感不安，于是前往德尔菲神庙求取神谕，得到的回答为“如果你跨过哈里斯河，一个伟大的帝国就会灭亡”。克罗埃索斯以为是波斯帝国会被自己消灭，于是贸然发动战争，结果却使得自己的吕底亚王国被吞并。 苏格拉底在德尔菲神庙得到的神谕：没有人比苏格拉底更加智慧（No one is wiser than Socrates, for he knows that he knows nothing）。苏格拉底不相信这一点，于是... ]]></description>
+    <pubDate>Mon, 14 Sep 2026 15:21:06 GMT</pubDate>
+  </item><item>
+    <title>程序员的自我修养</title>
+    <link>https://duanzeqian.github.io/self-learning-notes/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB</link>
+    <guid>https://duanzeqian.github.io/self-learning-notes/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB</guid>
+    <description><![CDATA[ 程序员的自我修养——链接、装载与库 一、简介 1. ]]></description>
+    <pubDate>Mon, 14 Sep 2026 09:08:14 GMT</pubDate>
+  </item><item>
+    <title>Self-learning Notes</title>
+    <link>https://duanzeqian.github.io/self-learning-notes/</link>
+    <guid>https://duanzeqian.github.io/self-learning-notes/</guid>
+    <description><![CDATA[ 本目录记录课内学习之外的一些学习内容，包括读书笔记、阅读文献收获等等，或是当助教过程中的温故知新。. ]]></description>
+    <pubDate>Mon, 14 Sep 2026 08:59:29 GMT</pubDate>
+  </item><item>
+    <title>Lessons</title>
+    <link>https://duanzeqian.github.io/lessons/</link>
+    <guid>https://duanzeqian.github.io/lessons/</guid>
+    <description><![CDATA[ 本目录保存大学课程的一些notes。. ]]></description>
+    <pubDate>Mon, 14 Sep 2026 08:02:27 GMT</pubDate>
+  </item><item>
+    <title>智能指针</title>
+    <link>https://duanzeqian.github.io/self-learning-notes/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88</link>
+    <guid>https://duanzeqian.github.io/self-learning-notes/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88</guid>
+    <description><![CDATA[ 智能指针：从入门到入土 SJTU CS1958-01 2026Fall 第二次大作业 前置阅读材料 一、前置知识 1. ]]></description>
+    <pubDate>Wed, 19 Aug 2026 16:00:00 GMT</pubDate>
+  </item><item>
+    <title>Welcome to Zeqian Duan&#039;s blog!</title>
+    <link>https://duanzeqian.github.io/</link>
+    <guid>https://duanzeqian.github.io/</guid>
+    <description><![CDATA[ About I’m Zeqian Duan, a sophomore from John Hopcroft Class at Shanghai Jiao Tong University, Zhiyuan College. Contact Email: tonyduan@sjtu.edu.cn. ]]></description>
+    <pubDate>Sat, 15 Aug 2026 09:21:30 GMT</pubDate>
+  </item><item>
+    <title>Answers for ACMOJ</title>
+    <link>https://duanzeqian.github.io/answers-for-acmoj/</link>
+    <guid>https://duanzeqian.github.io/answers-for-acmoj/</guid>
+    <description><![CDATA[ 本目录保存一些交大ACMOJ中我自己出的题目的题解。. ]]></description>
+    <pubDate>Sat, 15 Aug 2026 09:21:27 GMT</pubDate>
+  </item><item>
+    <title>2934</title>
+    <link>https://duanzeqian.github.io/answers-for-acmoj/2934</link>
+    <guid>https://duanzeqian.github.io/answers-for-acmoj/2934</guid>
+    <description><![CDATA[ ACMOJ2934 逆光 题解 前言：做完ACMOJ1545 维度跃迁之后，再看这道题或许会更有思路一些。 注意到逆光移动具有两个特殊性质： 两个人的相对位置始终不会发生变化，即他们的相对移动规则始终不变； 任意交换打开光源的顺序，对于最终结果没有任何影响。 举个例子： 有 3 个人，初始坐标分别为 (5, 5)，(7, 6)，(7, 7)。 按照1 \to 2 \to 3的顺序依次开光源。 1 开光源后，位置变为 (5, 5)，(9, 6)，(8, 8)； 2 开光源后，位置变为 (3, 5)，(9, 6)，(8, 10)； 3 开光源后，位置变为 (2, 4)，(9, 4)，(8, 10)... ]]></description>
+    <pubDate>Tue, 10 Mar 2026 16:00:00 GMT</pubDate>
+  </item><item>
+    <title>2928</title>
+    <link>https://duanzeqian.github.io/answers-for-acmoj/2928</link>
+    <guid>https://duanzeqian.github.io/answers-for-acmoj/2928</guid>
+    <description><![CDATA[ ACMOJ2928 导弹拦截 题解 本题可以分成两个子问题来解决。 第一个子问题是求出所有导弹的威力值 w_j。由平抛运动的特性，显然只有初始高度相同的导弹才可能发生碰撞。 固定某个高度 H，下落用时为 t = \sqrt{\frac{2H}{g}}。由于数据保证了每个导弹的初始位置不同，因此同一高度下每个导弹的初始位置不同。 考虑当两个导弹发生碰撞的时刻，显然无论这两个导弹是相遇还是追及，它们都有且仅有这一个时刻位置会重合，且在这一时刻前后两个导弹的相对位置是互换的。 因而，本质上，导弹的威力值就是它与别的导弹位置交换发生的次数。我们可以自然地联想到以前小作业中的一道题ACMOJ1301 B... ]]></description>
+    <pubDate>Mon, 09 Mar 2026 16:00:00 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
