@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Zeqian Duan&#039;s blog</title>
+      <link>https://duanzeqian.github.io</link>
+      <description>Last 10 notes on Zeqian Duan&#039;s blog</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Tag Index</title>
+    <link>https://duanzeqian.github.io/tags/</link>
+    <guid>https://duanzeqian.github.io/tags/</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Thu, 17 Sep 2026 15:40:12 GMT</pubDate>
+  </item><item>
+    <title>notes</title>
+    <link>https://duanzeqian.github.io/lessons/phil1009-principles-of-philosophy/notes</link>
+    <guid>https://duanzeqian.github.io/lessons/phil1009-principles-of-philosophy/notes</guid>
+    <description><![CDATA[ 哲学原理 导论 智慧： 古希腊神谕：模糊的，需要仔细解读的。 例如，吕底亚国王克罗埃索斯拥有一个富饶而强大的王国，他对邻居波斯帝国的崛起深感不安，于是前往德尔菲神庙求取神谕，得到的回答为“如果你跨过哈里斯河，一个伟大的帝国就会灭亡”。克罗埃索斯以为是波斯帝国会被自己消灭，于是贸然发动战争，结果却使得自己的吕底亚王国被吞并。 苏格拉底在德尔菲神庙得到的神谕：没有人比苏格拉底更加智慧（No one is wiser than Socrates, for he knows that he knows nothing）。苏格拉底不相信这一点，于是与雅典各个阶层的智者都进行了一番交谈，发现： 在这一点上... ]]></description>
+    <pubDate>Thu, 17 Sep 2026 15:39:13 GMT</pubDate>
+  </item><item>
+    <title>notes</title>
+    <link>https://duanzeqian.github.io/lessons/cs2951-computer-system-(1)/notes</link>
+    <guid>https://duanzeqian.github.io/lessons/cs2951-computer-system-(1)/notes</guid>
+    <description><![CDATA[ Computer System I. ]]></description>
+    <pubDate>Thu, 17 Sep 2026 15:36:32 GMT</pubDate>
+  </item><item>
+    <title>Answers for ACMOJ</title>
+    <link>https://duanzeqian.github.io/answers-for-acmoj/</link>
+    <guid>https://duanzeqian.github.io/answers-for-acmoj/</guid>
+    <description><![CDATA[ 本目录保存一些交大ACMOJ中我自己出的题目的题解。. ]]></description>
+    <pubDate>Thu, 17 Sep 2026 14:57:16 GMT</pubDate>
+  </item><item>
+    <title>CS2951-Computer System (1)</title>
+    <link>https://duanzeqian.github.io/lessons/cs2951-computer-system-(1)/</link>
+    <guid>https://duanzeqian.github.io/lessons/cs2951-computer-system-(1)/</guid>
+    <description><![CDATA[ 修读时间：2026-2027fall 授课教师：冯宇. ]]></description>
+    <pubDate>Thu, 17 Sep 2026 14:57:16 GMT</pubDate>
+  </item><item>
+    <title>PHIL1009-Principles of Philosophy</title>
+    <link>https://duanzeqian.github.io/lessons/phil1009-principles-of-philosophy/</link>
+    <guid>https://duanzeqian.github.io/lessons/phil1009-principles-of-philosophy/</guid>
+    <description><![CDATA[ 修读时间：2026-2027fall 授课教师：蔡文菁. ]]></description>
+    <pubDate>Thu, 17 Sep 2026 14:57:16 GMT</pubDate>
+  </item><item>
+    <title>Lessons</title>
+    <link>https://duanzeqian.github.io/lessons/</link>
+    <guid>https://duanzeqian.github.io/lessons/</guid>
+    <description><![CDATA[ 本目录保存笔者在上海交通大学上课的一些notes和资料。. ]]></description>
+    <pubDate>Thu, 17 Sep 2026 14:57:16 GMT</pubDate>
+  </item><item>
+    <title>Self-learning Notes</title>
+    <link>https://duanzeqian.github.io/self-learning-notes/</link>
+    <guid>https://duanzeqian.github.io/self-learning-notes/</guid>
+    <description><![CDATA[ 本目录记录课内学习之外的一些学习内容，包括读书笔记、阅读文献收获等等，或是当助教过程中的温故知新。. ]]></description>
+    <pubDate>Thu, 17 Sep 2026 14:57:16 GMT</pubDate>
+  </item><item>
+    <title>程序员的自我修养</title>
+    <link>https://duanzeqian.github.io/self-learning-notes/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB</link>
+    <guid>https://duanzeqian.github.io/self-learning-notes/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB</guid>
+    <description><![CDATA[ 程序员的自我修养——链接、装载与库 一、简介 1. ]]></description>
+    <pubDate>Thu, 17 Sep 2026 14:57:16 GMT</pubDate>
+  </item><item>
+    <title>Welcome to Zeqian Duan&#039;s blog!</title>
+    <link>https://duanzeqian.github.io/</link>
+    <guid>https://duanzeqian.github.io/</guid>
+    <description><![CDATA[ About I’m Zeqian Duan, a sophomore from John Hopcroft Class at Shanghai Jiao Tong University, Zhiyuan College. Contact Email: tonyduan@sjtu.edu.cn. ]]></description>
+    <pubDate>Thu, 17 Sep 2026 14:57:16 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>

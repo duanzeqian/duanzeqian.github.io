@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>程序员的自我修养</title><meta charset="utf-8"/><link rel="preload" href="../index-47d9ba67.css" as="style"/><link rel="preload" href="../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Zeqian Duan's blog"/><meta property="og:title" content="程序员的自我修养"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="程序员的自我修养"/><meta name="twitter:description" content="程序员的自我修养——链接、装载与库 一、简介 1."/><meta property="og:description" content="程序员的自我修养——链接、装载与库 一、简介 1."/><meta property="og:image:alt" content="程序员的自我修养——链接、装载与库 一、简介 1."/><meta property="og:image" content="https://duanzeqian.github.io/static/og-image.png"/><meta property="og:image:url" content="https://duanzeqian.github.io/static/og-image.png"/><meta name="twitter:image" content="https://duanzeqian.github.io/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="duanzeqian.github.io"/><meta property="og:url" content="https://duanzeqian.github.io/self-learning-notes/程序员的自我修养"/><meta property="twitter:url" content="https://duanzeqian.github.io/self-learning-notes/程序员的自我修养"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="程序员的自我修养——链接、装载与库 一、简介 1."/><meta name="generator" content="Quartz"/><link href="../index-47d9ba67.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted%20Grotesk%3Awght%40400%3B700&amp;family=Source%20Sans%20Pro%3Aital%2Cwght%400%2C400%3B0%2C600%3B1%2C400%3B1%2C600&amp;family=IBM%20Plex%20Mono%3Awght%40400%3B600&amp;display=swap"/></head><body data-slug="self-learning-notes/程序员的自我修养" data-basepath><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">Zeqian Duan's blog</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="Search" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something..." placeholder="Search for something..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="Dark mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="Reader mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-12" aria-label="Explorer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-12" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../self-learning-notes/">Self-learning Notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>程序员的自我修养</a></div></nav><h1 class="article-title">程序员的自我修养</h1><p show-comma="true" class="content-meta"><time datetime="2026-09-17T14:57:16.000Z">Sep 17, 2026</time><span>38 min read</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="程序员的自我修养链接装载与库">程序员的自我修养——链接、装载与库<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#程序员的自我修养链接装载与库" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="一简介">一、简介<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#一简介" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="1-一些基本概念">1. 一些基本概念<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-一些基本概念" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>计算机的三个关键部件：CPU、内存、IO控制芯片。</p>
+<p>硬件和应用程序之间的中间层使得两者之间保持相对独立。</p>
+<p>内存分配问题的解决方案：</p>
+<ul>
+<li><strong>分段</strong>（segmentation）：把一段与程序所需要的内存空间大小的虚拟空间映射到某个地址空间，建立虚拟空间到物理空间的映射关系，解决地址空间不隔离和程序运行地址不确定的问题。</li>
+<li><strong>分页</strong>（paging）：解决分段无法提高内存使用效率的问题，利用程序的局部性原理，把地址空间认为等分为<strong>固定大小</strong>的页（有些操作系统支持不同大小的页，但同一时刻只能选择一种大小）。</li>
+</ul>
+<h3 id="2-线程与进程">2. 线程与进程<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-线程与进程" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="定义">定义：<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#定义" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>线程</strong>（thread）：也叫做<strong>轻量级进程</strong>（lightweight process，LWP），是程序执行流的最小单元。由线程ID、当前指令指针、寄存器集合和堆栈组成。</p>
+<p><strong>进程</strong>（process）：由一个到多个线程组成，各个线程之间共享程序的内存空间（包括代码段、数据段、堆等）及一些进程级的资源（如打开文件和信号）。</p>
+<h4 id="线程调度">线程调度：<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#线程调度" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>在单处理器对应多线程的情况下，并发是一种被模拟出来的状态：轮流执行、快速切换，造成看起来在同时处理的假象。</p>
+<p>线程调度中线程拥有至少三种状态：</p>
+<ul>
+<li>运行：线程正在执行——拥有一段可以执行的时间，被称为<strong>时间片</strong>（time slice）。</li>
+<li>就绪：线程可以立刻运行，但CPU已经被占用。</li>
+<li>等待：线程正在等待某一事件（I/O或同步）发生，无法执行。</li>
+</ul>
+<p>线程调度的方法：</p>
+<ol>
+<li><strong>优先级调度</strong>（priority schedule）：线程拥有各自的线程优先级，优先级修改的方式有3种：
+<ul>
+<li>Windows下通过使用 <code>BOOL WINAPI SetThreadPriority(HANDLE hThread, int nPriority)</code>手动修改，Linux下通过<code>pthread</code>库实现。</li>
+<li>根据进入等待状态的频繁程度提升或降低优先级（频繁等待的称为<strong>IO密集型线程</strong>（IO bound thread），很少等待的称为<strong>CPU密集型线程</strong>（CPU bound thread），前者会更容易得到优先级的提升）。</li>
+<li>长时间得不到执行的线程会被提升优先级（避免<strong>饿死</strong>（starvation）的发生）。</li>
+</ul>
+</li>
+<li><strong>轮转法</strong>（round robin）：各个线程轮流执行一小段时间。</li>
+</ol>
+<h4 id="线程安全">线程安全：<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#线程安全" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><em>内容可参考SJTU John Class 2025~2026Spring 程序设计与数据结构Ⅱ的正课PPT</em></p>
+<p><strong>原子</strong>（atomic） 操作：有些操作（例如自增<code>++x</code>操作）被编译为汇编代码之后不止一条指令，因此可能执行了一半就被调度系统打断。为了避免这种情况，将这种单指令的操作设置为原子操作以避免其被打断。</p>
+<p><strong>同步</strong>（synchronization）：同一时间只能有一个线程对同一个数据进行访问。</p>
+<p><strong>锁</strong>（lock）：通过锁的获取与释放控制其它线程等待而非运行，保证操作只有一个线程在进行。锁的常见种类如下：</p>
+<ul>
+<li><strong>二元信号量</strong>（binary semaphore）：只有占用与非占用两个状态，适合只能被唯一一个线程独占访问的资源。推广形成的多元信号量（简称为<strong>信号量</strong>（semaphore））允许 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span> 个线程并发访问。</li>
+<li><strong>互斥量</strong>（mutex）：与二元信号量类似，但信号量在整个系统中可以被A线程获取后由B线程释放，但互斥量要求只能由获取互斥量的线程释放相应的锁。</li>
+<li><strong>临界区</strong>（critical section）：比互斥量更加严格的同步手段。临界区的作用范围仅限于本进程，但互斥量当中进程A创建互斥量，进程B试图获取该互斥量是合法的。</li>
+<li><strong>读写锁</strong>（read-write lock）：有<strong>共享</strong>（shared）和<strong>独占</strong>（exclusive）两种获取方式。自由状态的读写锁可以由任意一种方式获取，并被设置为对应的状态；共享状态的锁可以以共享方式获取，但试图以独占方式获取必须等待所有共享状态的锁全部释放；独占状态的锁组织任何其他线程获取该锁。</li>
+<li><strong>条件变量</strong>（condition variable）：作用类似于一个栅栏。线程可以等待cv，也可以唤醒cv。唤醒cv之后某个或所有等待此cv的线程都会被唤醒并继续支持。</li>
+</ul>
+<p><strong>可重入</strong>（reentrant）：一个函数被重入，表示这个函数没有执行完成，由于外部因素或内部调用，又一次进入该函数执行。可重入函数表面该函数被重入后不会产生任何不良后果。例如<code>int sqr(int x) { return x * x; }</code>是可重入的。可重入函数必须具有如下特点：</p>
+<ul>
+<li>不使用任何（局部）静态或全局的非const变量及其指针</li>
+<li>仅依赖于调用方提供的参数</li>
+<li>不依赖任何单个资源的锁</li>
+<li>不调用任何不可重入的函数</li>
+</ul>
+<p><strong>过度优化</strong>：有时合理使用锁也不能保证线程安全。一般有如下三种原因：</p>
+<ul>
+<li>编译器为了提高速度，将一个变量缓存到寄存器内而不写回。</li>
+<li>编译器调整操作变量的指令顺序。</li>
+<li>CPU动态调度换序。</li>
+</ul>
+<p>使用<code>volatile</code>关键字可以阻止编译器层面的过度优化，但无法阻止CPU调度换序。</p>
+<p>一个著名的例子：Singleton模式的double-check</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cpp" data-theme="github-light github-dark"><code data-language="cpp" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">volatile</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> T</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">*</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> pInst </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">;</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property">T</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">*</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> getInstance</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">()</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">{</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">    if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> (pInst </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">==</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> NULL</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">    {</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">        lock</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">();</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">        if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> (pInst </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">==</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> NULL</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">        {</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">            pInst </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> new</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> T;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">        }</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">        unlock</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">();</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">    }</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">    return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> pInst;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span></code></pre></figure>
+<p>首先讲解double-check的作用：</p>
+<ul>
+<li>内层的条件判断为逻辑必须。倘若仅有外层，那么如果A和B同时通过外层检查后，A先获得锁、创建instance、释放锁，随后B拿到锁以后也会创建一个instance，造成内存泄漏。</li>
+<li>外层的条件判断为性能优化。倘若仅有内层，那么无论何时到达的线程都会调用<code>lock()</code>和<code>unlock()</code>，调用开销大。外层的<code>if</code>添加以后，仅有进度相近的线程（同时通过外层检查）才会调用<code>lock()</code>。</li>
+</ul>
+<p>其次观察，<code>new</code>的过程一共分为三步：分配内存、在内存的位置上调用构造函数、将内存的地址赋给<code>pInst</code>。但后两步可以颠倒顺序，使得<code>pInst</code>不再是空，但对象尚未构造。倘若此时有另一个线程通过了<code>getInstance()</code>的外层判断并使用该实例，就会出错。<code>volatile</code>关键字可以阻止编译器交换顺序，但不能阻止CPU交换顺序。</p>
+<p>解决方法为调用体系结构中的barrier相关指令，阻止CPU将barrier之前的指令与之后的指令互换。POWERRPC中的指令如下：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cpp" data-theme="github-light github-dark"><code data-language="cpp" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="punctuation">#define</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> barrier</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">() </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">__asm__</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> volatile</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> (</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">lwsync</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">)</span></span></code></pre></figure>
+<p>然后将内层<code>if</code>的函数体改写如下：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cpp" data-theme="github-light github-dark"><code data-language="cpp" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">T</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">*</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> temp </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> new</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> T;</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">barrier</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">();</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">pInst </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> temp;</span></span></code></pre></figure>
+<hr/>
+<h2 id="二静态链接">二、静态链接<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#二静态链接" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="1-构建build的全过程">1. 构建（build）的全过程<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-构建build的全过程" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>一般我们所说的“编译”，即如下指令：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">gcc</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> hello.c</span></span></code></pre></figure>
+<p>它其实严格来说是构建，可以分解为4个步骤：<strong>预处理</strong>（prepressing）、<strong>编译</strong>（compilation）、<strong>汇编</strong>（assembly）、<strong>链接</strong>（linking）。</p>
+<h4 id="预编译">预编译：<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#预编译" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>主要处理哪些源代码文件中以#开始的预编译指令，相当于如下命令：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">gcc</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -E</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> hello.c</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -o</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> hello.i</span></span></code></pre></figure>
+<p>主要处理规则如下：</p>
+<ul>
+<li>将所有的<code>#define</code>删除，并且展开所有的宏定义。</li>
+<li>处理所有条件预编译指令，比如<code>#if</code>、<code>#ifdef</code>、<code>#elif</code>、<code>#else</code>、<code>#endif</code>。</li>
+<li>递归处理所有<code>#include</code>预编译指令，将被包含的文件插入到该预编译指令的位置。</li>
+<li>删除所有的注释。</li>
+<li>添加行号和文件名标识。</li>
+<li>保留所有的<code>#pragma</code>编译器指令。</li>
+</ul>
+<h4 id="编译">编译：<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#编译" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>对预处理完的文件进行词法分析、语法分析、语义分析、优化后生产的相应的汇编代码文件，相当于如下命令：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">gcc</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -S</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> hello.i</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -o</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> hello.s</span></span></code></pre></figure>
+<p>步骤如下：</p>
+<ul>
+<li>词法分析：将源代码程序输入到<strong>扫描器</strong>（scanner）当中，将字符序列分割成一系列的<strong>记号</strong>（token），一般分为关键字、标识符、字面量、特殊符号。</li>
+<li>语法分析：用<strong>语法分析器</strong>（grammar parser）对token进行语法分析，从而产生<strong>语法树</strong>（syntax tree）（采用<strong>上下文无关语法</strong>（context-free grammar）进行）。</li>
+<li>语义分析：用<strong>语义分析器</strong>（semantic analyzer）完成，来分析语句的<strong>静态语义</strong>（static semantic）是否合法，例如声明、类型匹配、类型转换等等，给语法树表达式标识上类型，插入相应的隐式转换节点。但它无法分析<strong>动态语义</strong>（dynamic semantic），即只有在运行期才能确定的语义是否合法。</li>
+<li>中间语言生成：采用<strong>源码级优化器</strong>（source code optimizer），通过将整个语法树转换成<strong>中间代码</strong>（intermediate code）对源代码进行优化。常见的中间代码为<strong>三地址码</strong>（three-address code），其形式为<code>x = y op z</code>。在此过程中会进行一些优化，例如把<code>t1 = 2 + 6</code>直接优化成<code>t1 = 8</code>，并将后续用到<code>t1</code>的部分全部代替为数字8（这样也能节省一个临时变量）。</li>
+<li>目标代码生成与优化：从编辑器前端转向编辑器后端，用<strong>代码生成器</strong>（code generator）将中间代码转化为目标机器代码，用<strong>目标代码优化器</strong>（target code optimizer）进行优化，例如选择合适的寻址方式、使用位移代替乘法运算、删掉多余的指令等等。</li>
+</ul>
+<p>这时候出现了一个问题：如果程序中有些变量或函数定义在其它的程序模块当中，应该如何确定它们的地址呢？这就需要链接器对目标文件进行链接，在后续会提及。</p>
+<h4 id="汇编">汇编：<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#汇编" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>汇编器将汇编代码转变为机器可以执行的指令。简单地说，就是根据汇编指令和机器指令的对照表进行一一翻译，相当于如下命令：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">gcc</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -c</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> hello.s</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -o</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> hello.o</span></span></code></pre></figure>
+<p>最终得到的就是<strong>目标文件</strong>（object file）。</p>
+<h4 id="链接">链接：<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#链接" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>链接是本书的主要内容，因此在此处先只作简单介绍。</p>
+<p>链接的历史比编译更为悠久，它起源于程序在纸带上运行时的跳转指令。由于程序并不是一写好就永久不变的，因此每次跳转的目标指令位置调整之后，程序员都要相应重新计算跳转指令。这一过程叫做<strong>重定位</strong>（relocation）。</p>
+<p>后来人们发明了汇编语言，用<strong>符号</strong>（symbol）来代表每个指令的含义，因此跳转指令就无需再因为程序的增删而相应修改了（因为调用的函数名【即符号】不会发生变化）。但在一个程序被分割成多个模块时，就需要进行模块间符号的引用，这个拼接过程就是链接。</p>
+<p>从原理上讲，链接的工作就是把一些指令对其它符号地址的引用加以修正，这一过程主要包括了<strong>地址和空间分配</strong>（address and storage allocation）、<strong>符号决议</strong>（symbol resolution）和<strong>重定位</strong>等这些步骤。</p>
+<p>假如存在一个全局变量<code>var</code>位于目标文件A里面，要在目标文件B中访问这个变量。在编译B的时候，编译器并不知道<code>var</code>的目标地址，所以编译器将对应指令的目标地址设置为0，等待链接器在将目标文件A和B连接起来的时候再将其修正。链接后修正地址的过程也被叫做<strong>重定位</strong>，每个要被修正的地方叫一个<strong>重定位入口</strong>（relocation entry）。</p>
+<h3 id="2-目标文件有什么">2. 目标文件有什么<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-目标文件有什么" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="常见格式">常见格式<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#常见格式" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;"></th><th style="text-align:center;">Windows</th><th style="text-align:center;">Linux</th></tr></thead><tbody><tr><td style="text-align:center;">可执行文件</td><td style="text-align:center;">.exe</td><td style="text-align:center;">ELF可执行文件</td></tr><tr><td style="text-align:center;">动态链接库</td><td style="text-align:center;">.dll</td><td style="text-align:center;">.so</td></tr><tr><td style="text-align:center;">静态链接库</td><td style="text-align:center;">.lib</td><td style="text-align:center;">.a</td></tr></tbody></table></div>
+<p>这张表格中的所有文件都是按照<strong>可执行文件格式</strong>（executable）存储的。Windows下为<strong>PE</strong>（portable executable），Linux下为<strong>ELF</strong>（executable linkable format），它们都是<strong>COFF</strong>（common file format）格式的变种。</p>
+<p>ELF格式又分为如下四类：</p>
+<ul>
+<li><strong>可重定位文件</strong>（relocatable file）：包含代码和数据，可以被用来链接成可执行文件或共享目标文件。
+<ul>
+<li>Linux的.o</li>
+<li>Windows的.obj</li>
+<li>静态链接库</li>
+</ul>
+</li>
+<li><strong>可执行文件</strong>（executable file）：包含可以执行的程序，一般没有扩展名。
+<ul>
+<li>/bin/bash文件</li>
+<li>Windows的.exe</li>
+</ul>
+</li>
+<li><strong>共享目标文件</strong>（shared object file）：包含代码和数据，可以在两种情况中使用。一是链接器可以将这种文件和其它的可重定位文件、共享目标文件链接，产生新的目标文件；二是动态链接器可以将几个共享目标文件与可执行文件结合，作为进程映像的一部分运行。
+<ul>
+<li>Linux的.so</li>
+<li>Windows的.dll</li>
+</ul>
+</li>
+<li><strong>核心转储文件</strong>（core dump file）：进程意外终止时，系统可以将该进程的地址空间的内容及终止时的一些其他信息转储到核心转储文件。
+<ul>
+<li>Linux的core dump</li>
+</ul>
+</li>
+</ul>
+<h4 id="存储方式">存储方式<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#存储方式" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>目标文件将代码、数据、链接时所需要的信息等按不同的属性，以<strong>节</strong>（section）的形式存储，也叫做<strong>段</strong>（segmentation）。常见的有如下几种分类：</p>
+<ul>
+<li><strong>代码段</strong>（code section）：程序源代码编译后的机器指令。【程序指令】
+<ul>
+<li>.code或.text</li>
+</ul>
+</li>
+<li><strong>数据段</strong>（data section）：全局变量和局部静态变量。【程序数据】
+<ul>
+<li>.data：已初始化的上述变量，往往以<strong>小端字节序</strong>（little-endian byte order）存储，即应当在十六进制下两格两格倒着读数。</li>
+<li>.rodata：只读数据：程序中的只读变量和字符串常量。</li>
+<li>.bss：未初始化的上述变量。由于它们的默认值为0，所以给它们在.data中分配空间并且存放数据0是没有必要的。往往编译器优化会将初始化值为0的上述变量也放到.bss当中。但有些编译器不会讲全局未初始化变量放在.bss中，只预留一个未定义的全局符号，等链接成可执行文件后再在.bss中分配空间。</li>
+</ul>
+</li>
+</ul>
+<p>数据和指令分段的好处有：</p>
+<ul>
+<li>便于合理的权限设置：数据区域设置为可读写，指令区域设置为只读。</li>
+<li>提高CPU<strong>缓存</strong>（cache）的命中率。</li>
+<li>节省大量空间：当系统中运行着多个该程序的副本时，它们的指令都是一样的，所以内存中只需要保存一份改程序的指令部分，对于许多其它资源也是如此。例如Windows Internet Explorer 7.0运行起来后私有部分数据仅占总虚存空间的约13%。</li>
+</ul>
+<p>自定义段
+GCC提供了一个扩展机制，可以将指定变量放入自定义段中：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cpp" data-theme="github-light github-dark"><code data-language="cpp" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="punctuation">__attribute__((</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">section</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;defined_section_name_1&quot;</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">)))</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> global </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 42</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">;</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="punctuation">__attribute__((</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">section</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;defined_section_name_2&quot;</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">)))</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> void</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> foo</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">()</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">{}</span></span></code></pre></figure>
+<h3 id="3-elf文件结构">3. ELF文件结构<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-elf文件结构" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="文件头header">文件头（header）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#文件头header" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>可以用<code>readelf</code>指令详细查看ELF文件内容，<code>-h</code>参数表示文件头：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">readelf</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -h</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> SimpleSection.o</span></span></code></pre></figure>
+<p>文件头包含以下几个关键部分：</p>
+<ul>
+<li><strong>ELF魔数</strong>：在文件识别中，魔数是位于文件开头的一组固定字节序列，用于标识文件类型和格式。
+<ul>
+<li>最开始的4个字节是所有 ELF 文件都必须相同的标识码，分别为<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">0</span><span class="mord mathnormal">x</span><span class="mord">7</span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span></span></span></span>，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span><span class="mord mathnormal">x</span><span class="mord">45</span></span></span></span>，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span><span class="mord mathnormal">x</span><span class="mord">4</span><span class="mord mathnormal">c</span></span></span></span>，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span><span class="mord mathnormal">x</span><span class="mord">46</span></span></span></span>，第一个字节为ASCII码当中的DEL控制符，后面3个字节为ELF三个字母的ASCII码。几乎所有可执行文件格式的最开始几个字节都是魔数，操作系统在加载时会确认魔数是否正确，如果不正确会拒绝加载。</li>
+<li>第5个字节标识ELF文件类，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span><span class="mord mathnormal">x</span><span class="mord">01</span></span></span></span>表示是32位的，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span><span class="mord mathnormal">x</span><span class="mord">02</span></span></span></span>表示是64位的</li>
+<li>第6个字节是字节序，规定ELF文件是大端还是小端的</li>
+<li>第7个字节规定ELF文件的主版本号，一般是1</li>
+<li>后面9个字节ELF标准没有定义，一般填0</li>
+</ul>
+</li>
+<li><strong>文件类型</strong>：每个文件类型对应一个常量，系统通过该常量（而非文件的扩展名）判断ELF文件的真正类型，相关常量以“ET_”开头。
+<ul>
+<li>ET_REL的值是1，代表可重定位文件</li>
+<li>ET_EXEC的值是2，代表可执行文件</li>
+<li>ET_DYN的值是3，代表共享目标文件</li>
+</ul>
+</li>
+<li><strong>机器类型</strong>：表示ELF文件的平台属性，该常量代表该ELF文件能在哪些平台上使用，相关常量以“EM_”开头。（一共有6种，不一一列举了）</li>
+</ul>
+<h4 id="段表section-header-table">段表（section header table）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#段表section-header-table" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>段表储存分段的基本属性结构，比如每个段的段名、段的长度、在文件中的偏移、读写权限以及段的其他属性，可以用以下指令查看：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">readelf</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -S</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> SimpleSection.o</span></span></code></pre></figure>
+<h4 id="重定位表relocation-table">重定位表（relocation table）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#重定位表relocation-table" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>重定位表记录需要重定位的部分，它同时也是ELF的一个段，因此也会出现在段表的信息当中。</p>
+<h4 id="字符串表string-table和段表字符串表section-header-string-table">字符串表（string table）和段表字符串表（section header string table）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#字符串表string-table和段表字符串表section-header-string-table" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>由于字符串的长度往往是不确定的，用固定的结构来表示比较困难。一种常见的方式是把字符串集中起来存放到一个表中，然后使用字符串在表中的偏移来引用字符串。例如该字符串表：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">偏移</th><th style="text-align:center;">+0</th><th style="text-align:center;">+1</th><th style="text-align:center;">+2</th><th style="text-align:center;">+3</th><th style="text-align:center;">+4</th><th style="text-align:center;">+5</th><th style="text-align:center;">+6</th><th style="text-align:center;">+7</th><th style="text-align:center;">+8</th><th style="text-align:center;">+9</th></tr></thead><tbody><tr><td style="text-align:center;"><strong>+0</strong></td><td style="text-align:center;">\0</td><td style="text-align:center;">h</td><td style="text-align:center;">e</td><td style="text-align:center;">l</td><td style="text-align:center;">l</td><td style="text-align:center;">o</td><td style="text-align:center;">w</td><td style="text-align:center;">o</td><td style="text-align:center;">r</td><td style="text-align:center;">l</td></tr><tr><td style="text-align:center;"><strong>+10</strong></td><td style="text-align:center;">d</td><td style="text-align:center;">\0</td><td style="text-align:center;">M</td><td style="text-align:center;">y</td><td style="text-align:center;">v</td><td style="text-align:center;">a</td><td style="text-align:center;">r</td><td style="text-align:center;">i</td><td style="text-align:center;">a</td><td style="text-align:center;">b</td></tr><tr><td style="text-align:center;"><strong>+20</strong></td><td style="text-align:center;">l</td><td style="text-align:center;">e</td><td style="text-align:center;">\0</td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td></tr></tbody></table></div>
+<p>那么就能用偏移对应如下字符串：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">偏移</th><th style="text-align:center;">字符串</th></tr></thead><tbody><tr><td style="text-align:center;">0</td><td style="text-align:center;">空字符串</td></tr><tr><td style="text-align:center;">1</td><td style="text-align:center;">hello</td></tr><tr><td style="text-align:center;">6</td><td style="text-align:center;">world</td></tr><tr><td style="text-align:center;">12</td><td style="text-align:center;">Myvaribale</td></tr></tbody></table></div>
+<p>通过这种方式，在ELF文件当中引用字符串，只需要给出一个数字下标而不用考虑其长度。字符串表用于保存普通的字符串，比如符号的名字，它在ELF文件当中也以段的形式保存；段表字符串表保存段表中用到的字符串，比如段名。</p>
+<h3 id="4-链接的接口符号">4. 链接的接口——符号<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-链接的接口符号" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>可以用<code>nm</code>指令来查看ELF文件的符号表：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">nm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> SimpleSection.o</span></span></code></pre></figure>
+<p>符号表中的符号一共有以下几类：</p>
+<ul>
+<li><strong>全局符号</strong>：定义在本目标文件的全局符号，可以被其他目标文件引用。</li>
+<li><strong>外部符号</strong>（external symbol）：在本目标文件里引用的全局符号，但没有定义在本目标文件中。【一种特殊的全局符号，也可以叫做全局符号】</li>
+<li><strong>段名</strong>：这种符号由编译器产生，值即为段的起始地址。</li>
+<li><strong>局部符号</strong>：只在编译单元内部可见的符号，对链接过程没有左右。</li>
+<li><strong>行号信息</strong>：目标文件指令和源代码中代码行的对应关系。</li>
+</ul>
+<p>对于链接而言，只有全局符号是重要的。</p>
+<h4 id="elf符号表结构">ELF符号表结构<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#elf符号表结构" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>ELF文件的符号表往往是文件中的一个段，段名一般为“.symtab”。其结构是一个Elf32_Sym的<strong>数组</strong>，每个该结构都对应一个符号，数组的第一个元素（下标为0的那个）为无效的未定义符号。</p>
+<p>Elf32_Sym定义如下：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cpp" data-theme="github-light github-dark"><code data-language="cpp" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">typedef</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> struct</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">{</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">	Elf32_Word st_name;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">	Elf32_Addr st_value;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">	Elf32_Word st_size;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">	unsigned</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> char</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> st_info;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">	unsigned</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> char</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> st_other;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">	Elf32_Half st_shndx;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">} </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property">Elf32_Sym</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">;</span></span></code></pre></figure>
+<p>几个成员的定义如下：</p>
+<ul>
+<li>st_name：符号名，包含了该符号名在字符串表中的下标；</li>
+<li>st_shndx：符号所在的段。有以下几种情况：
+<ul>
+<li>如果符号定义在本目标文件中，那么st_shndx表示符号所在的段在段表中的下标；</li>
+<li>如果符号不是定义在本目标文件中，又有如下三种情况：
+<ul>
+<li>SHN_ABS（0xfff1）：表示该符号包含了一个绝对的值，比如表示文件名的符号就属于这种类型；</li>
+<li>SHN_COMMON（0xfff2）：表示该符号是一个“COMMON块”类型的符号；</li>
+<li>SHN_UNDEF（0）：表示该符号未定义（定义在其它目标文件中）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>st_value：符号相对应的值。有以下几种情况：
+<ul>
+<li>在目标文件中，且符号不是“COMMON块”类型的（即st_shndx不为SHN_COMMON），则该值表示该符号在段中的偏移（符号所对应的函数或变量位于由st_shndx指定的段，偏移st_value的位置）。这是最常见的情况，例如SimpleSection.o中的：
+<ul>
+<li>func1</li>
+<li>main</li>
+<li>global_init_var</li>
+</ul>
+</li>
+<li>在目标文件中，且符号是“COMMON块”类型的，则st_value表示该符号的对齐属性。例如SimpleSection.o中的：
+<ul>
+<li>global_uninit_var</li>
+</ul>
+</li>
+<li>在可执行文件中，st_value表示符号的虚拟地址，用于动态链接。</li>
+</ul>
+</li>
+<li>st_size：符号大小。对于包含数据的符号，这个值表示数据类型的大小。如果该值为0，代表符号大小为0或未知；</li>
+<li>st_info：符号类型和绑定信息。低4位表示符号的类型，高28位表示符号绑定信息。符号绑定信息（Symbol Binding）以STB开头，符号类型（Symbol Type）以STT开头：
+<ul>
+<li>STB_LOCAL（0）：局部符号，目标文件外部不可见；</li>
+<li>STB_GLOBAL（1）：全局符号；</li>
+<li>STB_WEAK（2）：弱引用。</li>
+<li>STT_NOTYPE（0）：未知类型符号；</li>
+<li>STT_OBJECT（1）：数据对象，例如变量、数组等；</li>
+<li>STT_FUNC（2）：函数或其它可执行代码；</li>
+<li>STT_SECTION（3）：一个段。该符号必须是STB_LOCAL的；</li>
+<li>STT_FILE（4）：文件名。该符号必须是STB_LOCAL的，且其st_shndx一定是SHN_ABS。</li>
+</ul>
+</li>
+<li>st_other：该成员目前为0，没有用。</li>
+</ul>
+<p>可以用<code>readelf</code>指令分析各个符号在符号表中的状态：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">readelf</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -s</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> SimpleSection.o</span></span></code></pre></figure>
+<h4 id="特殊符号">特殊符号<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#特殊符号" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>链接的过程中会定义许多特殊符号，它们并没有在程序中定义，但可以直接声明并且引用。几个具有代表性的特殊符号如下：</p>
+<ul>
+<li>__executable_start：程序起始地址，即程序的最开始的地址；</li>
+<li>__etext或_etext或etext：代码段结束地址，即代码段最末尾的地址；</li>
+<li>_edata或edata：数据段结束地址，即数据段最末尾的地址；</li>
+<li>_end或end：程序结束地址。</li>
+</ul>
+<h4 id="符号修饰与函数签名">符号修饰与函数签名<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#符号修饰与函数签名" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>20世纪70年代以前，编译器编译源代码产生目标文件时，符号名与相应的变量和函数的名字是一样的，但这样容易产生命名冲突。于是UNIX规定，C语言源代码文件中的所有全局的变量和函数经过编译以后，相对应的符号名前加上下划线“_”；Fortran语言的源代码经过编译以后，前后都要加上下划线“_”。</p>
+<p>但这种方式并没有从根本上解决符号冲突的问题，因此后来设计了<strong>名称空间</strong>（namespace）来解决许多符号冲突的问题。</p>
+<p>现在整个环境发生了很大的变化，这样的冲突问题已经不是那么明显，因此Linux下的GCC编译器已经去掉了这种方式，但是在Windows平台下还保持着这样的传统。</p>
+<h5 id="c符号修饰">C++符号修饰<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#c符号修饰" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p>我们看一段包含6种函数重载的C++代码：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cpp" data-theme="github-light github-dark"><code data-language="cpp" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">int</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> func</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">);</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">float</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> func</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">float</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">);</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">class</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property"> C</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">{</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">	int</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> func</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">);</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">	class</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property"> C2</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">	{</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">		int</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> func</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">);</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">	};</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">};</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">namespace</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> N</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">{</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">	int</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> func</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">);</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">	class</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property"> C</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">	{</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">		int</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> func</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">);</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">	}</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span></code></pre></figure>
+<p>为了区分这些函数，我们引入了一个术语叫做<strong>函数签名</strong>（function signature），包含一个函数的诸多信息，包括函数名、参数类型、所在的类、名称空间等等。编译器及链接器处理符号时，通过名称修饰的方法使得每个函数签名都对应一种<strong>修饰后名称</strong>（decorated name）。上述例子中对应情况如下：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">函数签名</th><th style="text-align:center;">修饰后名称（符号名）</th></tr></thead><tbody><tr><td style="text-align:center;"><code>int func(int)</code></td><td style="text-align:center;">_Z4funci</td></tr><tr><td style="text-align:center;"><code>float func(float)</code></td><td style="text-align:center;">_Z4funcf</td></tr><tr><td style="text-align:center;"><code>int C::func(int)</code></td><td style="text-align:center;">_ZN1C4funcEi</td></tr><tr><td style="text-align:center;"><code>int C::C2::func(int)</code></td><td style="text-align:center;">_ZN1C2C24funcEi</td></tr><tr><td style="text-align:center;"><code>int N::func(int)</code></td><td style="text-align:center;">_ZN1N4funcEi</td></tr><tr><td style="text-align:center;"><code>int N::C::func(int)</code></td><td style="text-align:center;">_ZN1N1C4funcEi</td></tr></tbody></table></div>
+<p>这是一种常见的修饰方法，基本规则如下：</p>
+<ul>
+<li>所有符号都以“_Z”开头；</li>
+<li>每个名字前面的数字代表名字字符串的长度；</li>
+<li>对于嵌套的名字（在namespace或class中）的，后面紧跟一个“N”，再街上各个名称空间和类的名字，名字后面用“E”结尾；</li>
+<li>对于函数而言，它的参数列表紧跟在“E”的后面，int即为i，float即为f。</li>
+</ul>
+<p>例如第4种函数签名可以拆分为：_Z + N + 1C + 2C2 + 4funcE + i。</p>
+<h4 id="extern-c">extern “C”<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#extern-c" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>在 C 语言中，extern关键字用于声明一个在其他文件中定义的全局变量或函数，从而实现跨文件访问。C++为了与C兼容，支持一种声明或者定义一种C的符号的“extern “C””的关键字用法：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cpp" data-theme="github-light github-dark"><code data-language="cpp" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">extern</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;C&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">{</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">	int</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> func</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">);</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">	int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> var;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span></code></pre></figure>
+<p>C++编译器会将extern “C”的大括号内部（只有一行的话可以省略大括号）的代码当作C语言的代码处理，因此C++的名称修饰机制将不会起作用。因此有些C语言的函数或全局变量名称可能会与C++的修饰名称相冲突。有这样一个有趣的小实验：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cpp" data-theme="github-light github-dark"><code data-language="cpp" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="punctuation">#include</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &lt;stdio.h></span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">namespace</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> myname</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">{</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">	int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> var </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 42</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">extern</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;C&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> double</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> _ZN6myname3varE;</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">int</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> main</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">()</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">{</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">	printf</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">%d\n</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">, _ZN6myname3varE);</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">	return</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span></code></pre></figure>
+<p>这个外部符号的命名是根据前文所述的C++符号修饰规则对myname::var的修饰后名称，运行程序后发现输出结果为42。</p>
+<p>这个小实验证明，对于C语言库函数中定义的一些函数，如果不加以特殊处理，在C++代码中使用可能会出现问题。比如C语言string.h中声明的memset函数：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="c" data-theme="github-light github-dark"><code data-language="c" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">void</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> *</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">memset</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">void</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> *</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">, </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">, </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">size_t</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">);</span></span></code></pre></figure>
+<p>在C++语言中，编译器可能会认为这个memset函数是一个C++函数，将它的符号修饰为_Z6memsetPvii，这样链接器就无法与C语言库的memset符号进行链接。所以对于C++来说，必须使用extern “C”来声明memset函数。</p>
+<p>但是，C语言本身又不支持extern “C”语法，如果为了兼容C语言和C++语言定义两套头文件，未免过于麻烦。</p>
+<p>解决方法是利用C++的宏”__cplusplus“，通过条件宏来判断当前编译单元是不是C++代码：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cpp" data-theme="github-light github-dark"><code data-language="cpp" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="punctuation">#ifdef</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> __cplusplus</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> </span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">extern</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;C&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> {</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="punctuation">#endif</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">void</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> *</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">memset</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">void</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> *</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">, </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">, </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">size_t</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">);</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="punctuation">#ifdef</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> __cplusplus</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="punctuation">#endif</span></span></code></pre></figure>
+<p>这种技巧在几乎所有系统头文件里面都能被用到（包括兼容不同版本的C++）。</p>
+<h4 id="弱符号与强符号">弱符号与强符号<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#弱符号与强符号" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>当多个目标文件中含有相同名字全局符号的定义，那么这些目标文件链接的时候将会出现<strong>符号重复定义</strong>的错误。例如两个目标文件中都定义了一个全局整形变量global，并且都将它们初始化，那么链接器在链接A和B的时候会报错。这种符号的定义被称为<strong>强符号</strong>（strong symbol）。</p>
+<p>与之相对，有些符号的定义可以被称为<strong>弱符号</strong>（weak symbol）。对于C/C++语言来说，默认函数和初始化了的全局变量为强符号，未初始化的全局变量为弱符号。我们可以通过GCC的”__attribute__((weak))“来定义任何一个强符号为弱符号。</p>
+<p>注意，强符号和弱符号都是针对定义来说的，不是针对符号的引用（extern）。</p>
+<p>例如：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cpp" data-theme="github-light github-dark"><code data-language="cpp" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">extern</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> ext;</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> weak;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> strong </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">;</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="punctuation">__attribute__((</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">weak</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="punctuation">))</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> weak2 </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 2</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">;</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">int</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> main</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">()</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">{</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">	return</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span></code></pre></figure>
+<p>这段程序中，weak和weak2为弱符号，strong和main为强符号，ext既非强符号也非弱符号。</p>
+<p>根据强弱符号的概念，链接器会按照如下规则处理与选择多次被定义的全局符号：</p>
+<ol>
+<li>不允许强符号被多次定义，否则报符号重复定义错误；</li>
+<li>如果一个符号在某个文件中为强符号，其它文件中为弱符号，那么选择强符号；</li>
+<li>如果一个符号在所有目标文件中都是弱符号，那么选择其中占用空间最大的一个。</li>
+</ol>
+<p>在引用的层面也有强引用和弱引用之分。<strong>强引用</strong>（strong reference）要求所有符号引用在链接成可执行文件时，都必须被正确决议，如果没有找到定义，链接器就会报符号未定义错误。</p>
+<p>而<strong>弱引用</strong>（weak reference）在有定义时，与强引用的过程一样正常决议；没有定义时，链接器对于该引用不会报错，而是会默认其为0或者一个特殊的值。弱引用可以通过”__attribute__((weakref))“来声明一个外部函数的引用为弱引用，比如：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cpp" data-theme="github-light github-dark"><code data-language="cpp" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="punctuation">__attribute__ ((</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">weakref</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="punctuation">))</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> void</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> foo</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">();</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">int</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> main</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">()</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">{</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">	foo</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">();</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span></code></pre></figure>
+<p>这个程序在编译时虽然不会发生链接错误，但当我们运行这个执行文件时，会因为foo函数的地址为0而发生非法地址访问的错误。一种改进方法为：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cpp" data-theme="github-light github-dark"><code data-language="cpp" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="punctuation">__attribute__ ((</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">weakref</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="punctuation">))</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> void</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> foo</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">();</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">int</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> main</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">()</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">{</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">	if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(foo) </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">foo</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">();</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span></code></pre></figure>
+<p>弱引用和弱符号主要用于库的链接过程，例如库中定义的弱符号可以被用户定义的强符号所覆盖，从而使得程序可以使用自定义版本的库函数；或者程序可以对某些扩展功能模块的引用定义为弱引用，无论这些功能模块有没有实现，程序都可以正常链接。</p>
+<p>在Linux中，还可以通过设计弱引用函数pthread_create，在程序运行时动态判断其是否链接到pthread库来决定到底执行多线程版本还是单线程版本。</p>
+<h3 id="5-静态链接详解">5. 静态链接详解<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-静态链接详解" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>接下来我们以以下两个程序作为样例，来展开分析静态链接的详细过程：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="c" data-theme="github-light github-dark"><code data-language="c" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment">// a.c</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">extern</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> shared;</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">int</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> main</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">()</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">{</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">	int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> a </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 100</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">;</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">	swap</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">&amp;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="function">a, </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">&amp;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="function">shared);</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span></code></pre></figure>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="c" data-theme="github-light github-dark"><code data-language="c" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment">// b.c</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> shared </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">;</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">void</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> swap</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">int*</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="important"> a</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">, </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">int*</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="important"> b</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">{</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">	*</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">a </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">^=</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> *</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">b </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">^=</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> *</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">a </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">^=</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> *</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">b;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span></code></pre></figure>
+<p>它们编译后形成了目标文件a.o和b.o，我们的目标就是将这两个目标文件链接起来，形成一个可执行文件ab。</p>
+<h4 id="空间与地址分配">空间与地址分配<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#空间与地址分配" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>前文中提到了分段操作会为程序开辟一块虚拟空间，而链接器进行空间分配指的就是对这些虚拟地址（而非物理地址）进行分配。</p>
+<p>由于单纯将不同段按顺序叠加会使得段之间较为零散，在实现对齐要求时更加浪费空间，因此往往会将相似段合并到一起（例如把所有的.text段放在同一块区域）。链接器在实际工作时，往往会采用一种<strong>两部链接</strong>（two-pass linking）的方法：</p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc"><button type="button" class="toc-header" aria-controls="toc-3" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#程序员的自我修养链接装载与库" data-for="程序员的自我修养链接装载与库">程序员的自我修养——链接、装载与库</a></li><li class="depth-1"><a href="#一简介" data-for="一简介">一、简介</a></li><li class="depth-2"><a href="#1-一些基本概念" data-for="1-一些基本概念">1. 一些基本概念</a></li><li class="depth-2"><a href="#2-线程与进程" data-for="2-线程与进程">2. 线程与进程</a></li><li class="depth-1"><a href="#二静态链接" data-for="二静态链接">二、静态链接</a></li><li class="depth-2"><a href="#1-构建build的全过程" data-for="1-构建build的全过程">1. 构建（build）的全过程</a></li><li class="depth-2"><a href="#2-目标文件有什么" data-for="2-目标文件有什么">2. 目标文件有什么</a></li><li class="depth-2"><a href="#3-elf文件结构" data-for="3-elf文件结构">3. ELF文件结构</a></li><li class="depth-2"><a href="#4-链接的接口符号" data-for="4-链接的接口符号">4. 链接的接口——符号</a></li><li class="depth-2"><a href="#5-静态链接详解" data-for="5-静态链接详解">5. 静态链接详解</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script src="../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript-503771fb.js" type="module" data-persist="true"></script></html>
