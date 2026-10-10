@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Zeqian Duan&#039;s blog</title>
+      <link>https://duanzeqian.github.io</link>
+      <description>Last 10 notes on Zeqian Duan&#039;s blog</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Valgrind</title>
+    <link>https://duanzeqian.github.io/self-learning-notes/ta-notes/valgrind</link>
+    <guid>https://duanzeqian.github.io/self-learning-notes/ta-notes/valgrind</guid>
+    <description><![CDATA[ Valgrind 使用指南 一、什么是 Valgrind 我们前面提到，在写 C/C++ 时，用 new 或 malloc 申请内存可能会发生各种各样奇怪的内存问题。这些问题没办法用 strace/perf 来检查，因为它们不是 syscall 或热点。 要想查出这种错误，就需要用到 Valgrind Memcheck 工具。它会检查如下这些操作： 每块内存：是不是 malloc 的？多大？free 了吗？初始化了吗？ 每次存取：地址合法吗？这块 free 了吗？读的值初始化了吗？ 程序结束：所有 malloc 的都 free 了吗？ 二、如何安装 Valgrind sudo apt inst... ]]></description>
+    <pubDate>Tue, 13 Oct 2026 16:00:00 GMT</pubDate>
+  </item><item>
+    <title>binary&amp;bits</title>
+    <link>https://duanzeqian.github.io/self-learning-notes/ta-notes/binary-and-bits</link>
+    <guid>https://duanzeqian.github.io/self-learning-notes/ta-notes/binary-and-bits</guid>
+    <description><![CDATA[ 如何像计算机一样思考 一、二分 例题：已知 x 是 1 \sim 100 中随机选取的一个数字，你可以进行多次提问，每次提问给出一个数字 y，系统会告诉你 x 和 y 的大小关系。求一个最快的猜出 x 的策略。 解答 略 简单地说，二分就是不断地把问题的规模以比例的速度减小，从而迅速确定出目标解。折半的过程时间复杂度为 O(\log{N})，若单次查询用时为 T，则总时间复杂度为 O(T \log{N})。 1. ]]></description>
+    <pubDate>Tue, 13 Oct 2026 16:00:00 GMT</pubDate>
+  </item><item>
+    <title>assets</title>
+    <link>https://duanzeqian.github.io/assets/</link>
+    <guid>https://duanzeqian.github.io/assets/</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sat, 10 Oct 2026 03:14:57 GMT</pubDate>
+  </item><item>
+    <title>Tag Index</title>
+    <link>https://duanzeqian.github.io/tags/</link>
+    <guid>https://duanzeqian.github.io/tags/</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sat, 10 Oct 2026 03:14:57 GMT</pubDate>
+  </item><item>
+    <title>help</title>
+    <link>https://duanzeqian.github.io/assets/help</link>
+    <guid>https://duanzeqian.github.io/assets/help</guid>
+    <description><![CDATA[ 几种常用的提示框（callout） 类型别名语义用途默认强调色note—普通说明、附注#448aff 蓝abstractsummary, tldr摘要、总结#00b0ff 亮蓝info—信息、提示#00b8d4 青todo—待办清单#00b8d4 青（专用对勾图标）tiphint, important技巧、重要建议#00bfa5 青绿successcheck, done成功、已完成#09ad7a 绿questionhelp, faq疑问、FAQ#dba642 黄warningattention, caution警告、注意#db8942 橙failuremissing, fail失败、缺失#db... ]]></description>
+    <pubDate>Fri, 09 Oct 2026 14:02:17 GMT</pubDate>
+  </item><item>
+    <title>notes</title>
+    <link>https://duanzeqian.github.io/lessons/cs2951-computer-architecture-(1)/notes</link>
+    <guid>https://duanzeqian.github.io/lessons/cs2951-computer-architecture-(1)/notes</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Thu, 08 Oct 2026 11:59:24 GMT</pubDate>
+  </item><item>
+    <title>notes</title>
+    <link>https://duanzeqian.github.io/lessons/phil1009-principles-of-philosophy/notes</link>
+    <guid>https://duanzeqian.github.io/lessons/phil1009-principles-of-philosophy/notes</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Thu, 08 Oct 2026 11:59:24 GMT</pubDate>
+  </item><item>
+    <title>Lessons</title>
+    <link>https://duanzeqian.github.io/lessons/</link>
+    <guid>https://duanzeqian.github.io/lessons/</guid>
+    <description><![CDATA[ 本目录保存笔者在上海交通大学上课的一些notes和资料。. ]]></description>
+    <pubDate>Thu, 08 Oct 2026 11:59:24 GMT</pubDate>
+  </item><item>
+    <title>Answers for ACMOJ</title>
+    <link>https://duanzeqian.github.io/self-learning-notes/ta-notes/answers-for-acmoj/</link>
+    <guid>https://duanzeqian.github.io/self-learning-notes/ta-notes/answers-for-acmoj/</guid>
+    <description><![CDATA[ 本目录保存一些交大ACMOJ中我自己出的题目的题解。. ]]></description>
+    <pubDate>Thu, 08 Oct 2026 11:59:24 GMT</pubDate>
+  </item><item>
+    <title>TA Notes</title>
+    <link>https://duanzeqian.github.io/self-learning-notes/ta-notes/</link>
+    <guid>https://duanzeqian.github.io/self-learning-notes/ta-notes/</guid>
+    <description><![CDATA[ 本目录保存一些与助教工作相关的个人文档。. ]]></description>
+    <pubDate>Thu, 08 Oct 2026 11:59:24 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
